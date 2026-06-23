@@ -1,0 +1,31 @@
+# Riccardo Masetti
+
+Riccardo Masetti is a Cloud and DevOps engineer based in Ferrara, Emilia-Romagna, Italy.
+
+## Website
+
+- Canonical URL: https://www.riccardomasetti.com/
+- LinkedIn: https://www.linkedin.com/in/riccardomasetti
+
+## Professional Focus
+
+- Cloud-native delivery
+- Kubernetes platforms
+- GitOps and Flux CD
+- Infrastructure as Code with Terraform, Terragrunt, AWS CDK, and CloudFormation
+- CI/CD automation
+- Observability with Grafana and CloudWatch
+- AWS, Hetzner Cloud, EKS, Rancher RKE2, and ECS
+- Data and machine learning workflows with AWS SageMaker
+- AI automation with LLMs, multi-agent workflows, Google ADK, Vertex AI, Gemini, Claude, ChatGPT, and n8n
+
+## Career Summary
+
+Riccardo started in interface and web development, grew through backend and frontend architecture roles, moved into DBOps and platform engineering, and now focuses on DevOps, cloud infrastructure, GitOps, and AI-enabled automation.
+
+## Site Sections
+
+- Timeline: career progression from technical education through current DevOps and AI automation work.
+- Skills: cloud platforms, Infrastructure as Code, DevOps reliability, AI automation, data workflows, and software engineering roots.
+- Bio: professional focus plus personal interests in music, Argentine tango, meditation, spirituality, and human experience.
+- Contact: LinkedIn is the public contact channel.
