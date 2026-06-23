@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
-import logo from './assets/logo.svg';
+import logo from './assets/riccardo_vector_icon.svg';
+import portrait from './assets/Primo piano chitarra.jpg';
 
 const sections = [
   { id: 'timeline', label: 'Timeline' },
@@ -23,9 +24,9 @@ const timelineItems = [
   },
   {
     year: '2010 - 2022',
-    title: 'From software development to DBOps',
+    title: 'From software development to DevOps',
     meta: 'YOOX-NET-A-PORTER Group',
-    text: 'Spent more than 11 years growing through backend, frontend architecture, senior software development, and Senior DBOps responsibilities, moving from product engineering into operational ownership.',
+    text: 'Spent more than 11 years growing through backend, frontend architecture, software development, and DBOps responsibilities, moving from product engineering into operational ownership.',
   },
   {
     year: '2022',
@@ -41,36 +42,41 @@ const timelineItems = [
   },
   {
     year: '2024 - Present',
-    title: 'Cloud, DevOps, AI, and automation',
+    title: 'DevOps, AIOps, and automation',
     meta: 'Bullfinch - DevOps Engineer',
-    text: 'Optimizes cloud infrastructure for scalability and security, migrated from AWS EKS to Rancher RKE2 on Hetzner Cloud, and integrates LLM platforms such as Vertex AI, Gemini, and ChatGPT into business automation.',
+    text: 'Optimizes cloud infrastructure for scalability and security, migrated from AWS EKS to Rancher RKE2 on Hetzner Cloud, and integrates LLM platforms such as Vertex AI, Gemini, Claude and ChatGPT into business automation.',
   },
 ];
 
 const skillGroups = [
   {
-    name: 'Frontend',
-    skills: ['React', 'TypeScript', 'Responsive UI', 'Design systems', 'Accessibility'],
+    name: 'Cloud Platforms',
+    skills: ['AWS', 'Hetzner Cloud', 'Kubernetes EKS', 'Rancher RKE2', 'ECS', 'Flux CD'],
   },
   {
-    name: 'Backend',
-    skills: ['APIs', 'Node.js', 'Python', 'Databases', 'Event-driven systems'],
+    name: 'Infrastructure as Code',
+    skills: ['Terraform Cloud', 'Terragrunt', 'AWS CDK', 'CloudFormation', 'Cost optimization'],
   },
   {
-    name: 'Cloud & DevOps',
-    skills: ['Kubernetes', 'Terraform', 'CI/CD', 'Docker', 'AWS'],
+    name: 'DevOps & Reliability',
+    skills: ['CI/CD pipelines', 'GitOps', 'Deployment automation', 'Grafana', 'CloudWatch', 'Monitoring', 'Incident response'],
   },
   {
-    name: 'Engineering Practice',
-    skills: ['System design', 'Testing', 'Observability', 'Automation', 'Documentation'],
+    name: 'AI & Automation',
+    skills: ['LLM integration', 'Vertex AI', 'Gemini', 'ChatGPT', 'n8n', 'Workflow orchestration'],
+  },
+  {
+    name: 'Data & ML Workflows',
+    skills: ['AWS SageMaker', 'Data workflows', 'Analytics pipelines', 'Document analysis', 'Data management'],
+  },
+  {
+    name: 'Software Roots',
+    skills: ['Backend development', 'Frontend architecture', 'WordPress', 'Interface development', 'Web consulting'],
   },
 ];
 
 const contactItems = [
-  { label: 'Email', value: 'your.email@example.com', href: 'mailto:your.email@example.com' },
-  { label: 'Phone', value: '+39 000 000 0000', href: 'tel:+390000000000' },
-  { label: 'LinkedIn', value: 'linkedin.com/in/your-profile', href: 'https://linkedin.com' },
-  { label: 'Repository', value: 'github.com/your-handle', href: 'https://github.com' },
+  { label: 'LinkedIn', value: 'linkedin.com/in/riccardomasetti', href: 'https://www.linkedin.com/in/riccardomasetti' },
 ];
 
 function App() {
@@ -163,10 +169,11 @@ function App() {
       <section id="timeline" className="page-section timeline-section">
         <div className="hero-copy reveal" style={{ '--reveal-delay': '80ms' }}>
           <p className="intro-label">Riccardo Masetti</p>
-          <h1>Engineering reliable digital products with calm precision.</h1>
+          <h1>From web development to cloud platforms and AI automation.</h1>
           <p className="hero-text">
-            Technical portfolio shaped around career progress, practical
-            skills, personal story, and direct contact points.
+            A technical path shaped by software engineering, DevOps, Kubernetes,
+            Infrastructure as Code, GitOps, and practical automation for modern
+            cloud environments.
           </p>
         </div>
 
@@ -191,10 +198,10 @@ function App() {
       <section id="skills" className="page-section skills-section">
         <div className="section-heading reveal">
           <p className="section-kicker">Skills</p>
-          <h2>Technical range with production focus.</h2>
+          <h2>Cloud-native delivery, automation, and AI-enabled operations.</h2>
           <p>
-            This section is built to become the densest part of the site: concise,
-            scannable, and oriented around what you can actually ship and operate.
+            Practical experience across AWS, Kubernetes, GitOps, Infrastructure as
+            Code, observability, data workflows, and applied AI automation.
           </p>
         </div>
 
@@ -218,21 +225,27 @@ function App() {
 
       <section id="bio" className="page-section bio-section">
         <div className="bio-layout">
-          <div className="section-heading reveal">
-            <p className="section-kicker">Bio</p>
-            <h2>Curious by habit, practical by choice.</h2>
+          <div className="bio-content">
+            <div className="section-heading reveal">
+              <p className="section-kicker">Bio</p>
+              <h2>Curious by habit, practical by choice.</h2>
+            </div>
+            <div className="bio-copy reveal" style={{ '--reveal-delay': '100ms' }}>
+              <p>
+                I’m a DevOps and cloud infrastructure engineer focused on Kubernetes, automation,
+                platform engineering, and reliable systems.
+                I enjoy turning complex technical environments into scalable, maintainable solutions, 
+                while exploring how AI can improve operations and collaboration.
+              </p>
+              <p>
+                Beyond technology, I’m deeply connected to music, Argentine tango, 
+                meditation, and a broader curiosity for spirituality and human experience.
+              </p>
+            </div>
           </div>
-          <div className="bio-copy reveal" style={{ '--reveal-delay': '100ms' }}>
-            <p>
-              Use this space to talk about the person behind the work: hobbies,
-              passions, curiosities, dreams, expectations, and the kind of future you
-              want to build.
-            </p>
-            <p>
-              The current preview keeps the tone elegant and direct. It can evolve
-              toward a warmer personal story, a sharper professional manifesto, or a
-              balanced mix of both.
-            </p>
+
+          <div className="bio-portrait reveal" style={{ '--reveal-delay': '180ms' }}>
+            <img src={portrait} alt="Riccardo Masetti playing guitar" />
           </div>
         </div>
       </section>
@@ -240,8 +253,11 @@ function App() {
       <section id="contact" className="page-section contact-section">
         <div className="section-heading reveal">
           <p className="section-kicker">Contact</p>
-          <h2>Let&apos;s keep the conversation simple.</h2>
-          <p>Replace these placeholders with your real links and preferred contact order.</p>
+          <h2>Open to cloud, DevOps, and AI automation conversations.</h2>
+          <p>
+            LinkedIn is the best public channel to reach me for collaboration,
+            consulting, platform engineering, and automation-focused opportunities.
+          </p>
         </div>
 
         <div className="contact-list">
@@ -260,6 +276,14 @@ function App() {
           ))}
         </div>
       </section>
+
+      <footer className="site-footer">
+        <div className="footer-inner">
+          <span>Riccardo Masetti</span>
+          <span>Cloud, DevOps, AI automation</span>
+          <span>Built with React</span>
+        </div>
+      </footer>
     </main>
   );
 }
