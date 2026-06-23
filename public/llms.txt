@@ -17,7 +17,7 @@ Riccardo Masetti is a Cloud and DevOps engineer based in Ferrara, Emilia-Romagna
 - Observability with Grafana and CloudWatch
 - AWS, Hetzner Cloud, EKS, Rancher RKE2, and ECS
 - Data and machine learning workflows with AWS SageMaker
-- AI automation with LLMs, Vertex AI, Gemini, ChatGPT, and n8n
+- AI automation with LLMs, multi-agent workflows, Google ADK, Vertex AI, Gemini, Claude, ChatGPT, and n8n
 
 ## Career Summary
 

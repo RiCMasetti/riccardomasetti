@@ -63,7 +63,7 @@ const skillGroups = [
   },
   {
     name: 'AI & Automation',
-    skills: ['LLM integration', 'Vertex AI', 'Gemini', 'ChatGPT', 'n8n', 'Workflow orchestration'],
+    skills: ['LLM integration', 'Multi-agent workflows', 'Google ADK', 'Vertex AI', 'Gemini', 'Claude', 'ChatGPT', 'n8n'],
   },
   {
     name: 'Data & ML Workflows',
