@@ -10,4 +10,4 @@ npm run dev
 ```
 
 The page includes sticky navigation, smooth section scrolling, responsive layout,
-glass-style dark design, and scroll-driven parallax movement.
+glass-style dark design, and fade-in scroll movement.
