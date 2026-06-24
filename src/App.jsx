@@ -77,6 +77,7 @@ const skillGroups = [
 
 const contactItems = [
   { label: 'LinkedIn', value: 'linkedin.com/in/riccardomasetti', href: 'https://www.linkedin.com/in/riccardomasetti' },
+  { label: 'GitHub', value: 'github.com/RiCMasetti', href: 'https://github.com/RiCMasetti' },
 ];
 
 function App() {

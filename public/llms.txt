@@ -6,6 +6,7 @@ Riccardo Masetti is a Cloud and DevOps engineer based in Ferrara, Emilia-Romagna
 
 - Canonical URL: https://www.riccardomasetti.com/
 - LinkedIn: https://www.linkedin.com/in/riccardomasetti
+- GitHub: https://github.com/RiCMasetti
 
 ## Professional Focus
 
@@ -28,4 +29,4 @@ Riccardo started in interface and web development, grew through backend and fron
 - Timeline: career progression from technical education through current DevOps and AI automation work.
 - Skills: cloud platforms, Infrastructure as Code, DevOps reliability, AI automation, data workflows, and software engineering roots.
 - Bio: professional focus plus personal interests in music, Argentine tango, meditation, spirituality, and human experience.
-- Contact: LinkedIn is the public contact channel.
+- Contact: LinkedIn and GitHub are the public contact channels.
