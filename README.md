@@ -2,18 +2,20 @@
 
 One-page personal portfolio built with React and Vite.
 
-The site presents a career timeline, technical skills, bio, and contact section for Riccardo Masetti. It uses a dark glass-style design, sticky top navigation, smooth anchor scrolling, responsive layouts, and subtle scroll-reveal animations.
+The site presents a career timeline, technical skills, selected projects, bio, and contact section for Riccardo Masetti. It uses a dark glass-style design, sticky top navigation, smooth anchor scrolling, responsive layouts, and subtle scroll-reveal animations.
 
 ## Features
 
 - React frontend powered by Vite
-- One-page layout with sections for Timeline, Skills, Bio, and Contact
+- One-page layout with sections for Timeline, Skills, Projects, Bio, and Contact
 - Sticky centered navigation with active section highlighting
 - Responsive desktop, tablet, and mobile layout
 - Scroll-reveal animations instead of parallax movement
 - Full-width footer
+- Privacy notice that documents the site's tracking-free behavior and remembers dismissal locally
 - SVG favicon and menu icon
 - Bio portrait image from local assets
+- Advanced Static Publisher project showcase with local product imagery
 - SEO metadata, Open Graph metadata, Twitter metadata, and JSON-LD structured data
 - `robots.txt`, `sitemap.xml`, and `llms.txt` for search and AI crawler readability
 
@@ -32,6 +34,7 @@ The site presents a career timeline, technical skills, bio, and contact section 
 │   ├── styles.css          # Global layout and visual design
 │   └── assets/             # SVG icon and portrait image
 ├── package.json
+├── Makefile                # Build verification and optional AWS deployment workflow
 └── vite.config.js
 ```
 
@@ -67,6 +70,7 @@ Most visible content is in `src/App.jsx`:
 
 - `timelineItems` controls the Timeline section.
 - `skillGroups` controls the Skills section.
+- The Advanced Static Publisher markup and imported product assets control the Projects section.
 - `contactItems` controls the Contact links.
 - The Bio text and portrait image are inside the Bio section markup.
 
@@ -198,29 +202,52 @@ TTL: 0 or low value
 
 ### Deployment Commands
 
-Build the site:
+Prepare and verify the production content locally:
 
 ```bash
-npm run build
+make prepare
 ```
 
-Upload the build output:
+This builds the site and checks that `dist/` contains `index.html`, crawler files,
+and generated assets. It does not connect to AWS.
+
+Upload the build output to S3:
 
 ```bash
-aws s3 sync dist/ s3://YOUR_BUCKET_NAME/ --delete
+make deploy S3_BUCKET=YOUR_BUCKET_NAME
 ```
 
-Invalidate CloudFront:
+Invalidate CloudFront separately:
 
 ```bash
-aws cloudfront create-invalidation \
-  --distribution-id YOUR_DISTRIBUTION_ID \
-  --paths "/*"
+make invalidate CLOUDFRONT_DISTRIBUTION_ID=YOUR_DISTRIBUTION_ID
 ```
+
+Run the complete ordered release workflow:
+
+```bash
+make release \
+  S3_BUCKET=YOUR_BUCKET_NAME \
+  CLOUDFRONT_DISTRIBUTION_ID=YOUR_DISTRIBUTION_ID
+```
+
+Optional AWS CLI settings can be supplied without storing them in the repository:
+
+```bash
+make release \
+  S3_BUCKET=YOUR_BUCKET_NAME \
+  CLOUDFRONT_DISTRIBUTION_ID=YOUR_DISTRIBUTION_ID \
+  AWS_PROFILE=YOUR_PROFILE \
+  AWS_REGION=eu-west-1
+```
+
+The deployment gives HTML and machine-readable root files a revalidation cache
+policy. Fingerprinted files under `dist/assets/` receive a one-year immutable cache
+policy. CloudFront compression should remain enabled on the distribution.
 
 ## Deployment Checklist
 
-- `npm run build` passes
+- `make prepare` passes
 - `dist/index.html` exists
 - `dist/assets/` exists
 - `dist/robots.txt` exists

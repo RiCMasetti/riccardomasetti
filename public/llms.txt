@@ -24,9 +24,17 @@ Riccardo Masetti is a Cloud and DevOps engineer based in Ferrara, Emilia-Romagna
 
 Riccardo started in interface and web development, grew through backend and frontend architecture roles, moved into DBOps and platform engineering, and now focuses on DevOps, cloud infrastructure, GitOps, and AI-enabled automation.
 
+## Selected Project
+
+Advanced Static Publisher is a WordPress plugin created by Riccardo Masetti. It turns selected WordPress content into versioned static releases and publishes them to the user's own cloud without exposing a live WordPress, PHP, or database runtime to public visitors. Version 0.9.0 supports AWS, Cloudflare, Netlify, cost estimates, release restore, site health checks, and optional MCP access for AI assistants.
+
+- Product website: https://aspublisher.riccardomasetti.com/
+- Current status: Public beta, version 0.9.0
+
 ## Site Sections
 
 - Timeline: career progression from technical education through current DevOps and AI automation work.
 - Skills: cloud platforms, Infrastructure as Code, DevOps reliability, AI automation, data workflows, and software engineering roots.
+- Projects: selected independent software work, beginning with Advanced Static Publisher.
 - Bio: professional focus plus personal interests in music, Argentine tango, meditation, spirituality, and human experience.
 - Contact: LinkedIn and GitHub are the public contact channels.

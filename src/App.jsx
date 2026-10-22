@@ -1,10 +1,13 @@
 import { useEffect, useMemo, useState } from 'react';
 import logo from './assets/riccardo_vector_icon.svg';
 import portrait from './assets/Primo piano chitarra.jpg';
+import aspublisherLogo from './assets/aspublisher-logo.png';
+import aspublisherDashboard from './assets/aspublisher-dashboard.png';
 
 const sections = [
   { id: 'timeline', label: 'Timeline' },
   { id: 'skills', label: 'Skills' },
+  { id: 'projects', label: 'Projects' },
   { id: 'bio', label: 'Bio' },
   { id: 'contact', label: 'Contact' },
 ];
@@ -80,8 +83,17 @@ const contactItems = [
   { label: 'GitHub', value: 'github.com/RiCMasetti', href: 'https://github.com/RiCMasetti' },
 ];
 
+const privacyNoticeKey = 'riccardomasetti-privacy-notice-v1';
+
 function App() {
   const [activeSection, setActiveSection] = useState(sections[0].id);
+  const [isPrivacyNoticeVisible, setIsPrivacyNoticeVisible] = useState(() => {
+    try {
+      return window.localStorage.getItem(privacyNoticeKey) !== 'dismissed';
+    } catch {
+      return true;
+    }
+  });
 
   const sectionIds = useMemo(() => sections.map((section) => section.id), []);
 
@@ -146,6 +158,25 @@ function App() {
     return () => observer.disconnect();
   }, []);
 
+  useEffect(() => {
+    const activeLink = document.querySelector(`.nav-link[href="#${activeSection}"]`);
+    const navLinks = activeLink?.parentElement;
+
+    if (!activeLink || !navLinks || navLinks.scrollWidth <= navLinks.clientWidth) return;
+
+    activeLink.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+  }, [activeSection]);
+
+  const dismissPrivacyNotice = () => {
+    try {
+      window.localStorage.setItem(privacyNoticeKey, 'dismissed');
+    } catch {
+      // Keep the notice dismissible when browser storage is unavailable.
+    }
+
+    setIsPrivacyNoticeVisible(false);
+  };
+
   return (
     <main className="site-shell">
       <nav className="top-nav" aria-label="Main navigation">
@@ -158,6 +189,7 @@ function App() {
               key={section.id}
               className={activeSection === section.id ? 'nav-link active' : 'nav-link'}
               href={`#${section.id}`}
+              aria-current={activeSection === section.id ? 'location' : undefined}
             >
               {section.label}
             </a>
@@ -224,6 +256,84 @@ function App() {
         </div>
       </section>
 
+      <section id="projects" className="page-section projects-section">
+        <div className="section-heading reveal">
+          <p className="section-kicker">Projects</p>
+          <h2>Turning infrastructure experience into products.</h2>
+          <p>
+            Independent work where cloud architecture, automation, security, and
+            product design come together in software people can use.
+          </p>
+        </div>
+
+        <article className="project-showcase">
+          <div className="project-copy reveal" style={{ '--reveal-delay': '80ms' }}>
+            <div className="project-heading">
+              <img src={aspublisherLogo} width="256" height="256" alt="" />
+              <div>
+                <span className="project-status">Public beta · v0.9.0</span>
+                <h3>Advanced Static Publisher</h3>
+              </div>
+            </div>
+
+            <p className="project-tagline">WordPress in. Static out.</p>
+            <p className="project-description">
+              A WordPress plugin that turns selected content into versioned static
+              releases and publishes them to the user&apos;s own cloud. Visitors get a
+              fast static site without a public WordPress, PHP, or database runtime.
+            </p>
+
+            <div className="project-tags" aria-label="Advanced Static Publisher technologies">
+              {['WordPress', 'Static publishing', 'AWS', 'Cloudflare', 'Netlify', 'MCP'].map((tag) => (
+                <span key={tag}>{tag}</span>
+              ))}
+            </div>
+
+            <dl className="project-facts">
+              <div>
+                <dt>Architecture</dt>
+                <dd>No public CMS runtime</dd>
+              </div>
+              <div>
+                <dt>Delivery</dt>
+                <dd>Versioned cloud releases</dd>
+              </div>
+              <div>
+                <dt>Control</dt>
+                <dd>Costs and resources reviewed before provisioning</dd>
+              </div>
+            </dl>
+
+            <a
+              className="project-link"
+              href="https://aspublisher.riccardomasetti.com"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Explore the project
+            </a>
+          </div>
+
+          <a
+            className="project-media reveal"
+            style={{ '--reveal-delay': '160ms' }}
+            href="https://aspublisher.riccardomasetti.com"
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Open the Advanced Static Publisher website"
+          >
+            <img
+              src={aspublisherDashboard}
+              width="1180"
+              height="846"
+              alt="Advanced Static Publisher dashboard showing sites, cloud resources, releases, MCP agents, and health checks"
+              loading="lazy"
+            />
+            <span>View product website</span>
+          </a>
+        </article>
+      </section>
+
       <section id="bio" className="page-section bio-section">
         <div className="bio-layout">
           <div className="bio-content">
@@ -283,8 +393,30 @@ function App() {
           <span>Riccardo Masetti</span>
           <span>Cloud, DevOps, AI automation</span>
           <span>Built with React</span>
+          <button
+            className="privacy-link"
+            type="button"
+            onClick={() => setIsPrivacyNoticeVisible(true)}
+          >
+            Privacy
+          </button>
         </div>
       </footer>
+
+      {isPrivacyNoticeVisible ? (
+        <aside className="privacy-notice" aria-label="Privacy notice" aria-live="polite">
+          <div className="privacy-notice-copy">
+            <strong>Your privacy</strong>
+            <p>
+              This site does not use analytics, advertising, or tracking cookies. It only
+              stores your choice to hide this notice in your browser.
+            </p>
+          </div>
+          <button type="button" onClick={dismissPrivacyNotice}>
+            Understood
+          </button>
+        </aside>
+      ) : null}
     </main>
   );
 }
