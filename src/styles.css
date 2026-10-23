@@ -613,6 +613,83 @@ h1 {
   object-position: center;
 }
 
+.community-block {
+  margin-top: clamp(76px, 9vw, 112px);
+}
+
+.community-heading {
+  max-width: 760px;
+}
+
+.community-heading h3 {
+  margin-bottom: 0;
+  font-size: clamp(1.8rem, 3.5vw, 3.2rem);
+  line-height: 1.08;
+}
+
+.community-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 32px;
+}
+
+.community-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: clamp(26px, 4vw, 36px);
+  border: 1px solid var(--line-soft);
+  border-radius: 8px;
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.11), rgba(255, 255, 255, 0.035)),
+    var(--panel);
+  backdrop-filter: blur(16px) saturate(140%);
+  transition:
+    border-color 180ms ease,
+    background 180ms ease,
+    transform 180ms ease;
+}
+
+.community-card:hover {
+  border-color: rgba(142, 230, 216, 0.45);
+  background: var(--panel-strong);
+  transform: translateY(-2px);
+}
+
+.community-card > span {
+  margin-bottom: 12px;
+  color: var(--accent);
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+.community-card h3 {
+  margin-bottom: 16px;
+  font-size: clamp(1.4rem, 2.6vw, 2rem);
+  line-height: 1.15;
+}
+
+.community-card p {
+  flex: 1 1 auto;
+  margin-bottom: 28px;
+  color: var(--muted);
+  font-size: 0.98rem;
+  line-height: 1.65;
+}
+
+.community-card strong {
+  color: var(--accent-2);
+  font-size: 0.88rem;
+}
+
+.community-card:focus-visible {
+  outline: 2px solid var(--accent-2);
+  outline-offset: 3px;
+}
+
 .contact-list {
   display: grid;
   gap: 18px;
@@ -819,6 +896,7 @@ h1 {
   .skills-grid,
   .project-showcase,
   .experiment-grid,
+  .community-grid,
   .bio-layout,
   .contact-row {
     grid-template-columns: 1fr;
@@ -939,6 +1017,7 @@ h1 {
   .contact-row,
   .project-link,
   .project-media img,
+  .community-card,
   .privacy-link,
   .privacy-notice > button {
     transition: none;

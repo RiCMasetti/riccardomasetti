@@ -15,6 +15,7 @@ The site presents a career timeline, technical skills, selected projects, bio, a
 - Privacy notice that documents the site's tracking-free behavior and remembers dismissal locally
 - SVG favicon and menu icon
 - Bio portrait image from local assets
+- LinkedIn newsletter and professional community contributions in the Bio section
 - Advanced Static Publisher showcase plus selected open-source experiments in agents, FinOps, and GitOps
 - SEO metadata, Open Graph metadata, Twitter metadata, and JSON-LD structured data
 - `robots.txt`, `sitemap.xml`, and `llms.txt` for search and AI crawler readability
@@ -73,6 +74,7 @@ Most visible content is in `src/App.jsx`:
 - The Advanced Static Publisher markup and `experimentProjects` data control the Projects section.
 - `contactItems` controls the Contact links.
 - The Bio text and portrait image are inside the Bio section markup.
+- `communityItems` controls the LinkedIn newsletter and community links in the Bio section.
 
 Most visual styling is in `src/styles.css`.
 

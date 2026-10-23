@@ -129,6 +129,25 @@ const experimentProjects = [
   },
 ];
 
+const communityItems = [
+  {
+    type: 'LinkedIn newsletter',
+    title: 'The Deep End of DevOps',
+    description:
+      'A newsletter where I contribute practical perspectives on DevOps, platform engineering, cloud operations, and automation beyond the happy path.',
+    href: 'https://www.linkedin.com/newsletters/the-deep-end-of-devops-7478553206269341696/',
+    linkLabel: 'Read the newsletter',
+  },
+  {
+    type: 'LinkedIn community',
+    title: 'Codex Developers Italia',
+    description:
+      'An Italian community where I contribute to peer discussions about Codex, AI-assisted development, practical workflows, and the changing craft of software engineering.',
+    href: 'https://www.linkedin.com/groups/42837135/',
+    linkLabel: 'Visit the community',
+  },
+];
+
 const privacyNoticeKey = 'riccardomasetti-privacy-notice-v1';
 
 function App() {
@@ -434,6 +453,31 @@ function App() {
 
           <div className="bio-portrait reveal" style={{ '--reveal-delay': '180ms' }}>
             <img src={portrait} alt="Riccardo Masetti playing guitar" />
+          </div>
+        </div>
+
+        <div className="community-block">
+          <div className="community-heading reveal">
+            <p className="section-kicker">Writing &amp; community</p>
+            <h3>Sharing experience, learning in public, and staying in the conversation.</h3>
+          </div>
+
+          <div className="community-grid">
+            {communityItems.map((item, index) => (
+              <a
+                className="community-card reveal"
+                style={{ '--reveal-delay': `${index * 90}ms` }}
+                href={item.href}
+                key={item.href}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <span>{item.type}</span>
+                <h3>{item.title}</h3>
+                <p>{item.description}</p>
+                <strong>{item.linkLabel}</strong>
+              </a>
+            ))}
           </div>
         </div>
       </section>
