@@ -15,7 +15,7 @@ The site presents a career timeline, technical skills, selected projects, bio, a
 - Privacy notice that documents the site's tracking-free behavior and remembers dismissal locally
 - SVG favicon and menu icon
 - Bio portrait image from local assets
-- Advanced Static Publisher project showcase with local product imagery
+- Advanced Static Publisher showcase plus selected open-source experiments in agents, FinOps, and GitOps
 - SEO metadata, Open Graph metadata, Twitter metadata, and JSON-LD structured data
 - `robots.txt`, `sitemap.xml`, and `llms.txt` for search and AI crawler readability
 
@@ -70,7 +70,7 @@ Most visible content is in `src/App.jsx`:
 
 - `timelineItems` controls the Timeline section.
 - `skillGroups` controls the Skills section.
-- The Advanced Static Publisher markup and imported product assets control the Projects section.
+- The Advanced Static Publisher markup and `experimentProjects` data control the Projects section.
 - `contactItems` controls the Contact links.
 - The Bio text and portrait image are inside the Bio section markup.
 
@@ -83,7 +83,7 @@ The project includes multiple machine-readable layers:
 - Standard metadata in `index.html`
 - Canonical URL for `https://www.riccardomasetti.com/`
 - Open Graph and Twitter metadata for social previews
-- JSON-LD `Person` structured data
+- JSON-LD `Person`, `SoftwareApplication`, and open-source project structured data
 - `noscript` fallback summary for crawlers that do not render JavaScript
 - `public/robots.txt`
 - `public/sitemap.xml`

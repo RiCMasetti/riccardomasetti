@@ -83,6 +83,52 @@ const contactItems = [
   { label: 'GitHub', value: 'github.com/RiCMasetti', href: 'https://github.com/RiCMasetti' },
 ];
 
+const experimentProjects = [
+  {
+    status: 'Experimental · Multi-agent FinOps',
+    title: 'OpenWeb Cost Agents',
+    description:
+      'A read-only multi-agent assistant that routes cloud cost questions to AWS Cost Explorer and Hetzner specialists through Google ADK and Open WebUI.',
+    tags: ['Google ADK', 'AWS Cost Explorer', 'Hetzner', 'Bedrock', 'Open WebUI'],
+    links: [
+      {
+        label: 'View repository',
+        href: 'https://github.com/RiCMasetti/google-adk-multiagent',
+      },
+    ],
+  },
+  {
+    status: 'Reference implementation · GitOps',
+    title: 'EKS GitOps Platform',
+    description:
+      'A modular AWS EKS platform reference built with Terraform, Terragrunt, Flux CD, and GitHub Actions, with environment promotion and infrastructure validation workflows.',
+    tags: ['Terragrunt', 'Terraform', 'Amazon EKS', 'Flux CD', 'GitHub Actions'],
+    links: [
+      {
+        label: 'View repository',
+        href: 'https://github.com/RiCMasetti/terragrunt-eks',
+      },
+    ],
+  },
+  {
+    status: 'Experimental · Agent orchestration',
+    title: 'Multi-Agent App Factory',
+    description:
+      'Two implementations of a specification-driven workflow where specialized agents plan, build, test, and package frontend applications using isolated workspaces.',
+    tags: ['LangGraph', 'Google ADK', 'Docker', 'Testing', 'LangSmith'],
+    links: [
+      {
+        label: 'LangGraph implementation',
+        href: 'https://github.com/RiCMasetti/langchain-frontend-app-factory',
+      },
+      {
+        label: 'Google ADK implementation',
+        href: 'https://github.com/RiCMasetti/google-adk-app-factory',
+      },
+    ],
+  },
+];
+
 const privacyNoticeKey = 'riccardomasetti-privacy-notice-v1';
 
 function App() {
@@ -332,6 +378,37 @@ function App() {
             <span>View product website</span>
           </a>
         </article>
+
+        <div className="experiments-heading reveal">
+          <p className="section-kicker">Selected experiments</p>
+          <h3>Open-source explorations in agents, FinOps, and platform engineering.</h3>
+        </div>
+
+        <div className="experiment-grid">
+          {experimentProjects.map((project, index) => (
+            <article
+              className="experiment-card reveal"
+              style={{ '--reveal-delay': `${index * 80}ms` }}
+              key={project.title}
+            >
+              <span className="project-status">{project.status}</span>
+              <h3>{project.title}</h3>
+              <p>{project.description}</p>
+              <div className="project-tags" aria-label={`${project.title} technologies`}>
+                {project.tags.map((tag) => (
+                  <span key={tag}>{tag}</span>
+                ))}
+              </div>
+              <div className="experiment-links">
+                {project.links.map((link) => (
+                  <a href={link.href} key={link.href} target="_blank" rel="noreferrer">
+                    {link.label}
+                  </a>
+                ))}
+              </div>
+            </article>
+          ))}
+        </div>
       </section>
 
       <section id="bio" className="page-section bio-section">

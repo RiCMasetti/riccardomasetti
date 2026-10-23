@@ -10,7 +10,7 @@
     <meta name="author" content="Riccardo Masetti" />
     <meta
       name="keywords"
-      content="Riccardo Masetti, Cloud Engineer, DevOps Engineer, Kubernetes, GitOps, Flux CD, Terraform, Terragrunt, AWS, AI automation, WordPress plugin, Advanced Static Publisher"
+      content="Riccardo Masetti, Cloud Engineer, DevOps Engineer, Kubernetes, GitOps, Flux CD, Terraform, Terragrunt, AWS, Google ADK, LangGraph, multi-agent systems, AI automation, WordPress plugin, Advanced Static Publisher"
     />
     <meta name="robots" content="index, follow" />
     <meta name="theme-color" content="#050607" />
@@ -81,6 +81,59 @@
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
+        "@type": "ItemList",
+        "name": "Riccardo Masetti open-source projects",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "item": {
+              "@type": "SoftwareSourceCode",
+              "name": "OpenWeb Cost Agents",
+              "codeRepository": "https://github.com/RiCMasetti/google-adk-multiagent",
+              "programmingLanguage": "Python",
+              "description": "A read-only Google ADK multi-agent assistant for AWS Cost Explorer and Hetzner cost questions."
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "item": {
+              "@type": "SoftwareSourceCode",
+              "name": "EKS GitOps Platform",
+              "codeRepository": "https://github.com/RiCMasetti/terragrunt-eks",
+              "programmingLanguage": "HCL",
+              "description": "An AWS EKS reference implementation using Terraform, Terragrunt, Flux CD, and GitHub Actions."
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "item": {
+              "@type": "SoftwareSourceCode",
+              "name": "Multi-Agent App Factory (LangGraph)",
+              "codeRepository": "https://github.com/RiCMasetti/langchain-frontend-app-factory",
+              "programmingLanguage": "Python",
+              "description": "A specification-driven multi-agent workflow for building and testing frontend applications with LangGraph."
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "item": {
+              "@type": "SoftwareSourceCode",
+              "name": "Multi-Agent App Factory (Google ADK)",
+              "codeRepository": "https://github.com/RiCMasetti/google-adk-app-factory",
+              "programmingLanguage": "Python",
+              "description": "A specification-driven multi-agent workflow for building and testing frontend applications with Google ADK."
+            }
+          }
+        ]
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
         "@type": "SoftwareApplication",
         "name": "Advanced Static Publisher",
         "url": "https://aspublisher.riccardomasetti.com/",
@@ -129,12 +182,18 @@
           engineering, and now focuses on DevOps, cloud infrastructure, GitOps,
           and AI-enabled automation.
         </p>
-        <h2>Selected Project</h2>
+        <h2>Selected Projects</h2>
         <p>
           <a href="https://aspublisher.riccardomasetti.com/">Advanced Static Publisher</a>
           is a WordPress plugin that publishes versioned static websites to AWS,
           Cloudflare, and Netlify without exposing a live CMS runtime to visitors.
         </p>
+        <ul>
+          <li><a href="https://github.com/RiCMasetti/google-adk-multiagent">OpenWeb Cost Agents</a></li>
+          <li><a href="https://github.com/RiCMasetti/terragrunt-eks">EKS GitOps Platform</a></li>
+          <li><a href="https://github.com/RiCMasetti/langchain-frontend-app-factory">Multi-Agent App Factory (LangGraph)</a></li>
+          <li><a href="https://github.com/RiCMasetti/google-adk-app-factory">Multi-Agent App Factory (Google ADK)</a></li>
+        </ul>
         <p>
           Public contact channel:
           <a href="https://www.linkedin.com/in/riccardomasetti">LinkedIn</a>.

@@ -24,12 +24,19 @@ Riccardo Masetti is a Cloud and DevOps engineer based in Ferrara, Emilia-Romagna
 
 Riccardo started in interface and web development, grew through backend and frontend architecture roles, moved into DBOps and platform engineering, and now focuses on DevOps, cloud infrastructure, GitOps, and AI-enabled automation.
 
-## Selected Project
+## Selected Projects
 
 Advanced Static Publisher is a WordPress plugin created by Riccardo Masetti. It turns selected WordPress content into versioned static releases and publishes them to the user's own cloud without exposing a live WordPress, PHP, or database runtime to public visitors. Version 0.9.0 supports AWS, Cloudflare, Netlify, cost estimates, release restore, site health checks, and optional MCP access for AI assistants.
 
 - Product website: https://aspublisher.riccardomasetti.com/
 - Current status: Public beta, version 0.9.0
+
+Riccardo also publishes experimental and reference implementations on GitHub:
+
+- OpenWeb Cost Agents: a read-only Google ADK multi-agent assistant for AWS Cost Explorer and Hetzner cost questions, integrated with Open WebUI. https://github.com/RiCMasetti/google-adk-multiagent
+- EKS GitOps Platform: an AWS EKS reference implementation using Terraform, Terragrunt, Flux CD, and GitHub Actions. https://github.com/RiCMasetti/terragrunt-eks
+- Multi-Agent App Factory (LangGraph): a specification-driven workflow where specialized agents build and test frontend applications. https://github.com/RiCMasetti/langchain-frontend-app-factory
+- Multi-Agent App Factory (Google ADK): the same app-factory concept implemented with Google ADK orchestration. https://github.com/RiCMasetti/google-adk-app-factory
 
 ## Site Sections
 
