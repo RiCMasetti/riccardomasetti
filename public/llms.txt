@@ -38,6 +38,7 @@ Advanced Static Publisher is a WordPress plugin created by Riccardo Masetti. It 
 
 Riccardo also publishes experimental and reference implementations on GitHub:
 
+- Chess Challenge · Stockfish: a TypeScript and React 3D chess arena where Amazon Bedrock models compete, with Stockfish available as an analysis tool and acting as referee for live move-quality, cost, token, and latency reporting. https://github.com/RiCMasetti/chess-challenge-stockfish
 - OpenWeb Cost Agents: a read-only Google ADK multi-agent assistant for AWS Cost Explorer and Hetzner cost questions, integrated with Open WebUI. https://github.com/RiCMasetti/google-adk-multiagent
 - EKS GitOps Platform: an AWS EKS reference implementation using Terraform, Terragrunt, Flux CD, and GitHub Actions. https://github.com/RiCMasetti/terragrunt-eks
 - Multi-Agent App Factory (LangGraph): a specification-driven workflow where specialized agents build and test frontend applications. https://github.com/RiCMasetti/langchain-frontend-app-factory

@@ -85,6 +85,19 @@ const contactItems = [
 
 const experimentProjects = [
   {
+    status: 'Experimental · AI chess evaluation',
+    title: 'Chess Challenge · Stockfish',
+    description:
+      'A 3D chess arena where two Amazon Bedrock models compete while Stockfish acts as referee and optional analysis tool, with live cost, latency, accuracy, and move-quality reporting.',
+    tags: ['TypeScript', 'Three.js', 'Amazon Bedrock', 'Stockfish', 'React'],
+    links: [
+      {
+        label: 'View repository',
+        href: 'https://github.com/RiCMasetti/chess-challenge-stockfish',
+      },
+    ],
+  },
+  {
     status: 'Experimental · Multi-agent FinOps',
     title: 'OpenWeb Cost Agents',
     description:
@@ -400,7 +413,7 @@ function App() {
 
         <div className="experiments-heading reveal">
           <p className="section-kicker">Selected experiments</p>
-          <h3>Open-source explorations in agents, FinOps, and platform engineering.</h3>
+          <h3>Open-source explorations in AI systems, FinOps, and platform engineering.</h3>
         </div>
 
         <div className="experiment-grid">

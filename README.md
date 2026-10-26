@@ -16,7 +16,7 @@ The site presents a career timeline, technical skills, selected projects, bio, a
 - SVG favicon and menu icon
 - Bio portrait image from local assets
 - LinkedIn newsletter and professional community contributions in the Bio section
-- Advanced Static Publisher showcase plus selected open-source experiments in agents, FinOps, and GitOps
+- Advanced Static Publisher showcase plus selected open-source experiments in AI systems, agents, FinOps, and GitOps
 - SEO metadata, Open Graph metadata, Twitter metadata, and JSON-LD structured data
 - `robots.txt`, `sitemap.xml`, and `llms.txt` for search and AI crawler readability
 
