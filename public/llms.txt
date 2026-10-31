@@ -31,13 +31,15 @@ Riccardo started in interface and web development, grew through backend and fron
 
 ## Selected Projects
 
-Advanced Static Publisher is a WordPress plugin created by Riccardo Masetti. It turns selected WordPress content into versioned static releases and publishes them to the user's own cloud without exposing a live WordPress, PHP, or database runtime to public visitors. Version 0.9.0 supports AWS, Cloudflare, Netlify, cost estimates, release restore, site health checks, and optional MCP access for AI assistants.
+Masetti Static Site Publisher is a WordPress plugin created by Riccardo Masetti. It turns selected WordPress content into versioned static releases and publishes them to the user's own cloud without exposing a live WordPress, PHP, or database runtime to public visitors. Version 0.10.0 supports AWS, Cloudflare, Netlify, cost estimates, release restore, site health checks, and optional MCP access for AI assistants.
 
+- WordPress.org plugin: https://wordpress.org/plugins/masetti-static-site-publisher/
 - Product website: https://aspublisher.riccardomasetti.com/
-- Current status: Public beta, version 0.9.0
+- Current status: Public beta, version 0.10.0
 
 Riccardo also publishes experimental and reference implementations on GitHub:
 
+- WordPress Plugin Crew · Codex: a supervised Codex and subagent factory for coordinated WordPress plugin development, independent review, automated testing, packaging, and isolated local environments. https://github.com/RiCMasetti/codex-community-plugin-facotry
 - Chess Challenge · Stockfish: a TypeScript and React 3D chess arena where Amazon Bedrock models compete, with Stockfish available as an analysis tool and acting as referee for live move-quality, cost, token, and latency reporting. https://github.com/RiCMasetti/chess-challenge-stockfish
 - OpenWeb Cost Agents: a read-only Google ADK multi-agent assistant for AWS Cost Explorer and Hetzner cost questions, integrated with Open WebUI. https://github.com/RiCMasetti/google-adk-multiagent
 - EKS GitOps Platform: an AWS EKS reference implementation using Terraform, Terragrunt, Flux CD, and GitHub Actions. https://github.com/RiCMasetti/terragrunt-eks
@@ -48,6 +50,6 @@ Riccardo also publishes experimental and reference implementations on GitHub:
 
 - Timeline: career progression from technical education through current DevOps and AI automation work.
 - Skills: cloud platforms, Infrastructure as Code, DevOps reliability, AI automation, data workflows, and software engineering roots.
-- Projects: selected independent software work, beginning with Advanced Static Publisher.
+- Projects: selected independent software work, beginning with Masetti Static Site Publisher.
 - Bio: professional focus, writing and community contributions, plus personal interests in music, Argentine tango, meditation, spirituality, and human experience.
 - Contact: LinkedIn and GitHub are the public contact channels.

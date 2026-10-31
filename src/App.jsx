@@ -5,6 +5,7 @@ import aspublisherLogo from './assets/aspublisher-logo.png';
 import aspublisherDashboard from './assets/aspublisher-dashboard.png';
 
 const sections = [
+  { id: 'home', label: 'Home' },
   { id: 'timeline', label: 'Timeline' },
   { id: 'skills', label: 'Skills' },
   { id: 'projects', label: 'Projects' },
@@ -85,11 +86,26 @@ const contactItems = [
 
 const experimentProjects = [
   {
+    status: 'Experimental · Supervised agent workflow',
+    title: 'WordPress Plugin Crew · Codex',
+    description:
+      'A supervised Codex and subagent factory for building WordPress plugins with coordinated implementation, independent review, automated testing, packaging, and isolated local environments.',
+    tags: ['Codex', 'WordPress', 'PHP', 'wp-env', 'Docker'],
+    highlights: ['30 isolated policy scenarios', 'PHP 7.4–8.5 test matrix'],
+    links: [
+      {
+        label: 'View repository',
+        href: 'https://github.com/RiCMasetti/codex-community-plugin-facotry',
+      },
+    ],
+  },
+  {
     status: 'Experimental · AI chess evaluation',
     title: 'Chess Challenge · Stockfish',
     description:
       'A 3D chess arena where two Amazon Bedrock models compete while Stockfish acts as referee and optional analysis tool, with live cost, latency, accuracy, and move-quality reporting.',
     tags: ['TypeScript', 'Three.js', 'Amazon Bedrock', 'Stockfish', 'React'],
+    highlights: ['Stockfish 19 referee and model tool', 'Markdown, PGN, and JSON reports'],
     links: [
       {
         label: 'View repository',
@@ -103,6 +119,7 @@ const experimentProjects = [
     description:
       'A read-only multi-agent assistant that routes cloud cost questions to AWS Cost Explorer and Hetzner specialists through Google ADK and Open WebUI.',
     tags: ['Google ADK', 'AWS Cost Explorer', 'Hetzner', 'Bedrock', 'Open WebUI'],
+    highlights: ['Read-only AWS and Hetzner tools', 'Bedrock or Vertex AI model backends'],
     links: [
       {
         label: 'View repository',
@@ -116,6 +133,7 @@ const experimentProjects = [
     description:
       'A modular AWS EKS platform reference built with Terraform, Terragrunt, Flux CD, and GitHub Actions, with environment promotion and infrastructure validation workflows.',
     tags: ['Terragrunt', 'Terraform', 'Amazon EKS', 'Flux CD', 'GitHub Actions'],
+    highlights: ['OIDC-based GitHub Actions access', 'Reviewed plan and protected apply workflow'],
     links: [
       {
         label: 'View repository',
@@ -129,6 +147,7 @@ const experimentProjects = [
     description:
       'Two implementations of a specification-driven workflow where specialized agents plan, build, test, and package frontend applications using isolated workspaces.',
     tags: ['LangGraph', 'Google ADK', 'Docker', 'Testing', 'LangSmith'],
+    highlights: ['Five frontend framework templates', 'Bounded retries and isolated workspaces'],
     links: [
       {
         label: 'LangGraph implementation',
@@ -237,7 +256,7 @@ function App() {
   }, []);
 
   useEffect(() => {
-    const activeLink = document.querySelector(`.nav-link[href="#${activeSection}"]`);
+    const activeLink = document.querySelector(`.nav-link[data-section="${activeSection}"]`);
     const navLinks = activeLink?.parentElement;
 
     if (!activeLink || !navLinks || navLinks.scrollWidth <= navLinks.clientWidth) return;
@@ -256,9 +275,13 @@ function App() {
   };
 
   return (
-    <main className="site-shell">
+    <>
+      <a className="skip-link" href="#main-content">
+        Skip to main content
+      </a>
+      <main className="site-shell" id="main-content">
       <nav className="top-nav" aria-label="Main navigation">
-        <a className="brand-mark" href="#timeline" aria-label="Riccardo Masetti home">
+        <a className="brand-mark" href="#home" aria-label="Riccardo Masetti home">
           <img src={logo} alt="" />
         </a>
         <div className="nav-links">
@@ -266,7 +289,8 @@ function App() {
             <a
               key={section.id}
               className={activeSection === section.id ? 'nav-link active' : 'nav-link'}
-              href={`#${section.id}`}
+              href={section.id === 'contact' ? '#contact-links' : `#${section.id}`}
+              data-section={section.id}
               aria-current={activeSection === section.id ? 'location' : undefined}
             >
               {section.label}
@@ -277,17 +301,33 @@ function App() {
 
       <div className="ambient-grid" aria-hidden="true" />
 
-      <section id="timeline" className="page-section timeline-section">
+      <section id="home" className="page-section hero-section">
         <div className="hero-copy reveal" style={{ '--reveal-delay': '80ms' }}>
-          <p className="intro-label">Riccardo Masetti</p>
-          <h1>From web development to cloud platforms and AI automation.</h1>
+          <p className="intro-label">Riccardo Masetti · DevOps &amp; Platform Engineer</p>
+          <h1>Reliable cloud platforms. Practical AI automation.</h1>
           <p className="hero-text">
-            A technical path shaped by software engineering, DevOps, Kubernetes,
-            Infrastructure as Code, GitOps, and practical automation for modern
-            cloud environments.
+            I design and operate cloud-native platforms, delivery systems, and
+            automation that make complex infrastructure easier to run, secure,
+            and evolve.
           </p>
+          <div className="hero-actions">
+            <a className="project-link" href="#projects">View selected projects</a>
+            <a className="project-link project-link-secondary" href="#contact-links">Start a conversation</a>
+          </div>
+          <ul className="hero-focus" aria-label="Primary areas of expertise">
+            <li>AWS &amp; Kubernetes</li>
+            <li>Infrastructure as Code &amp; GitOps</li>
+            <li>AI-enabled operations</li>
+          </ul>
         </div>
+      </section>
 
+      <section id="timeline" className="page-section timeline-section">
+        <div className="section-heading reveal">
+          <p className="section-kicker">Experience</p>
+          <h2>From software engineering to platform ownership.</h2>
+          <p>A career built across product development, cloud infrastructure, reliability, and automation.</p>
+        </div>
         <div className="timeline-wrap">
           {timelineItems.map((item, index) => (
             <article
@@ -349,8 +389,8 @@ function App() {
             <div className="project-heading">
               <img src={aspublisherLogo} width="256" height="256" alt="" />
               <div>
-                <span className="project-status">Public beta · v0.9.0</span>
-                <h3>Advanced Static Publisher</h3>
+                <span className="project-status">Public beta · v0.10.0</span>
+                <h3>Masetti Static Site Publisher</h3>
               </div>
             </div>
 
@@ -361,7 +401,7 @@ function App() {
               fast static site without a public WordPress, PHP, or database runtime.
             </p>
 
-            <div className="project-tags" aria-label="Advanced Static Publisher technologies">
+            <div className="project-tags" aria-label="Masetti Static Site Publisher technologies">
               {['WordPress', 'Static publishing', 'AWS', 'Cloudflare', 'Netlify', 'MCP'].map((tag) => (
                 <span key={tag}>{tag}</span>
               ))}
@@ -382,14 +422,24 @@ function App() {
               </div>
             </dl>
 
-            <a
-              className="project-link"
-              href="https://aspublisher.riccardomasetti.com"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Explore the project
-            </a>
+            <div className="project-actions">
+              <a
+                className="project-link"
+                href="https://wordpress.org/plugins/masetti-static-site-publisher/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Get it on WordPress.org
+              </a>
+              <a
+                className="project-link project-link-secondary"
+                href="https://aspublisher.riccardomasetti.com"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Explore the project
+              </a>
+            </div>
           </div>
 
           <a
@@ -398,13 +448,13 @@ function App() {
             href="https://aspublisher.riccardomasetti.com"
             target="_blank"
             rel="noreferrer"
-            aria-label="Open the Advanced Static Publisher website"
+            aria-label="Open the Masetti Static Site Publisher website"
           >
             <img
               src={aspublisherDashboard}
-              width="1180"
-              height="846"
-              alt="Advanced Static Publisher dashboard showing sites, cloud resources, releases, MCP agents, and health checks"
+              width="1250"
+              height="710"
+              alt="Masetti Static Site Publisher dashboard showing sites, cloud resources, releases, MCP agents, and health checks"
               loading="lazy"
             />
             <span>View product website</span>
@@ -413,7 +463,7 @@ function App() {
 
         <div className="experiments-heading reveal">
           <p className="section-kicker">Selected experiments</p>
-          <h3>Open-source explorations in AI systems, FinOps, and platform engineering.</h3>
+          <h3>Open-source explorations in agent workflows, AI systems, FinOps, and platform engineering.</h3>
         </div>
 
         <div className="experiment-grid">
@@ -431,6 +481,11 @@ function App() {
                   <span key={tag}>{tag}</span>
                 ))}
               </div>
+              <ul className="project-evidence" aria-label={`${project.title} verified highlights`}>
+                {project.highlights.map((highlight) => (
+                  <li key={highlight}>{highlight}</li>
+                ))}
+              </ul>
               <div className="experiment-links">
                 {project.links.map((link) => (
                   <a href={link.href} key={link.href} target="_blank" rel="noreferrer">
@@ -505,7 +560,7 @@ function App() {
           </p>
         </div>
 
-        <div className="contact-list">
+        <div className="contact-list" id="contact-links">
           {contactItems.map((item, index) => (
             <a
               className="contact-row reveal"
@@ -551,7 +606,8 @@ function App() {
           </button>
         </aside>
       ) : null}
-    </main>
+      </main>
+    </>
   );
 }
 

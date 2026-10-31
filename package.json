@@ -2,9 +2,11 @@
   "name": "riccardomasetti-website",
   "version": "0.1.0",
   "private": true,
+  "license": "MIT",
   "type": "module",
   "scripts": {
     "dev": "vite --host 0.0.0.0",
+    "prebuild": "node scripts/update-sitemap.mjs",
     "build": "vite build",
     "preview": "vite preview --host 0.0.0.0"
   },

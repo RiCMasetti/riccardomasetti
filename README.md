@@ -16,8 +16,9 @@ The site presents a career timeline, technical skills, selected projects, bio, a
 - SVG favicon and menu icon
 - Bio portrait image from local assets
 - LinkedIn newsletter and professional community contributions in the Bio section
-- Advanced Static Publisher showcase plus selected open-source experiments in AI systems, agents, FinOps, and GitOps
+- Masetti Static Site Publisher showcase plus selected open-source experiments in supervised agent workflows, AI systems, FinOps, and GitOps
 - SEO metadata, Open Graph metadata, Twitter metadata, and JSON-LD structured data
+- Branded Open Graph preview image for social sharing
 - `robots.txt`, `sitemap.xml`, and `llms.txt` for search and AI crawler readability
 
 ## Project Structure
@@ -25,8 +26,14 @@ The site presents a career timeline, technical skills, selected projects, bio, a
 ```text
 .
 ├── index.html              # HTML shell, SEO metadata, JSON-LD, noscript summary
+├── AGENTS.md               # Instructions and continuity workflow for coding sessions
+├── docs/
+│   ├── PROJECT_CONTEXT.md  # Durable product and architecture context
+│   ├── DECISIONS.md        # Lasting architectural and product decisions
+│   └── SESSION_HANDOFF.md  # Current state, validation, and next steps
 ├── public/
 │   ├── llms.txt            # AI-readable project/profile summary
+│   ├── og-image.png        # Social-sharing preview image
 │   ├── robots.txt          # Crawler rules and sitemap reference
 │   └── sitemap.xml         # Sitemap for the canonical domain
 ├── src/
@@ -35,9 +42,22 @@ The site presents a career timeline, technical skills, selected projects, bio, a
 │   ├── styles.css          # Global layout and visual design
 │   └── assets/             # SVG icon and portrait image
 ├── package.json
+├── scripts/
+│   └── update-sitemap.mjs  # Refreshes sitemap lastmod before production builds
 ├── Makefile                # Build verification and optional AWS deployment workflow
 └── vite.config.js
 ```
+
+## Continuing Work Across Sessions
+
+Start each new coding session with `AGENTS.md`. It points to the durable project
+context, decision log, and current handoff in `docs/`. When a session changes the
+repository, refresh the handoff and update the other documents only when their
+long-lived information has changed.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
 
 ## Local Development
 
@@ -71,7 +91,7 @@ Most visible content is in `src/App.jsx`:
 
 - `timelineItems` controls the Timeline section.
 - `skillGroups` controls the Skills section.
-- The Advanced Static Publisher markup and `experimentProjects` data control the Projects section.
+- The Masetti Static Site Publisher markup and `experimentProjects` data control the Projects section.
 - `contactItems` controls the Contact links.
 - The Bio text and portrait image are inside the Bio section markup.
 - `communityItems` controls the LinkedIn newsletter and community links in the Bio section.
@@ -85,6 +105,7 @@ The project includes multiple machine-readable layers:
 - Standard metadata in `index.html`
 - Canonical URL for `https://www.riccardomasetti.com/`
 - Open Graph and Twitter metadata for social previews
+- A 1200 × 630 social-sharing image at `public/og-image.png`
 - JSON-LD `Person`, `SoftwareApplication`, and open-source project structured data
 - `noscript` fallback summary for crawlers that do not render JavaScript
 - `public/robots.txt`
@@ -103,6 +124,9 @@ Then rebuild with:
 ```bash
 npm run build
 ```
+
+The production build automatically refreshes the sitemap's `<lastmod>` date in
+the Europe/Rome timezone before Vite generates `dist/`.
 
 ## Deploying To S3 And CloudFront
 

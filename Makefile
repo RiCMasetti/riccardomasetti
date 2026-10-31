@@ -44,6 +44,7 @@ verify: ## Validate the distribution directory contents.
 	@for file in index.html robots.txt sitemap.xml llms.txt; do \
 		test -f "$(DIST_DIR)/$$file" || { echo "Missing $(DIST_DIR)/$$file"; exit 1; }; \
 	done
+	@test -f "$(DIST_DIR)/og-image.png" || { echo "Missing $(DIST_DIR)/og-image.png"; exit 1; }
 	@test -d "$(DIST_DIR)/assets" || { echo "Missing $(DIST_DIR)/assets/."; exit 1; }
 	@test -n "$$(find "$(DIST_DIR)/assets" -type f -print -quit)" || { echo "$(DIST_DIR)/assets/ is empty."; exit 1; }
 	@test ! -d "$(DIST_DIR)/dist" || { echo "Unexpected nested $(DIST_DIR)/dist/ directory."; exit 1; }
